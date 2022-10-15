@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://kit.fontawesome.com/3e07d4433e.js" crossorigin="anonymous"></script>
+    <title>Aafia | {{ drug[0] }}</title>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <a href="/"><i class="fa-solid fa-house home-icon"></i></a>
+    <div class="container">
+        <div class="drug-info">
+            <h1>{{ drug[0] }}</h1>
+            <h2>Description</h2>
+            <p>{{ drug[1] }}</p>
+            <h2>Type</h2>
+            <p>
+                {% if drug[2] == 0 %}
+                Capsules
+                {% elif drug[2] == 1 %}
+                Injection
+                {% elif drug[2] == 2 %}
+                Drink
+                {% endif %}
+            </p>
+            <h2>Pharmacy Name</h2>
+            <p>{{ pharmacy[0] }}</p>
+            <h2>Pharmacy Address</h2>
+            <p>{{ pharmacy[1] }}</p>
+            <h2>Pharmacy Phone Number</h2>
+            <p>{{ pharmacy[2] }}</p>
+        </div>
+    </div>
+</body>
+</html>

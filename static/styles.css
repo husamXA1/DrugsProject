@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    /* The image used */
+    background-image: url("images/background.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+    width: 100vw;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: -1;
+}
+
+.main-page {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.main-page .text {
+    width: 50%;
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+.main-page .btns {
+    background: linear-gradient(0.04deg, rgba(139, 61, 44, 0.7) -5.92%, rgba(60, 90, 149, 0.7) 90.09%);
+    width: 50%;
+    height: 600px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: white 0 0 5px;
+}
+.main-page .btns img {
+    
+}
+.main-page .btns form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.main-page .btns form input[type="search"] {
+    width: 80%;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.main-page .btns form input[type="submit"] {
+    width: 80%;
+    padding: 10px;
+    background-color: rgb(60, 90, 149);
+    border-radius: 10px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+.main-page .btns form input[type="submit"]:hover {
+    background-color: rgb(28, 43, 73);
+}
+.main-page .btns a {
+    text-decoration: none;
+    color: rgb(65, 128, 255);
+    padding: 10px;
+    transition: 0.3;
+}
+.main-page .btns a:hover {
+    color: rgb(255, 255, 255);
+}
+.main-title {
+    text-align: center;
+    color: white;
+    font-size: 64px;
+    padding: 10px;
+}
+.home-icon {
+    font-size: 32px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.home-icon:hover {
+    color: black;
+}
+.search-form {
+    background: linear-gradient(0.04deg, rgba(139, 61, 44, 0.7) -5.92%, rgba(60, 90, 149, 0.7) 90.09%);
+    border-radius: 10px;
+    box-shadow: white 0 0 5px;
+    height: 120px;
+}
+.search-form form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.search-form form h2 {
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.search-form form input[type="search"] {
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    border: none
+}
+.results {
+    background: linear-gradient(0.04deg, rgba(139, 61, 44, 0.7) -5.92%, rgba(60, 90, 149, 0.7) 90.09%);
+    border-radius: 10px;
+    box-shadow: white 0 0 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.results .drugs-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.results h2 {
+    color: white;
+    font-weight: normal;
+    text-align: center;
+}
+.drug-card {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: white 0 0 5px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+.drug-card input[type="submit"] {
+    padding: 5px;
+    background-color: rgb(60, 90, 149);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.drug-card input[type="submit"]:hover {
+    box-shadow: black 0 0 5px;
+}
+.drug-card h2 {
+    color: black;
+    font-weight: bold;
+    text-align: left;
+}
+.drug-card span {
+    position: absolute;
+    width: 2px;
+    height: 80%;
+    background-color: gray;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+.drug-card .pharmacy-info {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 2;
+}
+.drug-card .pharmacy-info h3,
+.drug-card .pharmacy-info p {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.drug-card .pharmacy-info p {
+    color: #555;
+}
+.drug-card p {
+    text-align: center;
+}
+.drug-card .pharmacy-info div {
+    width: 48%;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+/* Mobile screen media */
+@media (max-width: 767px) {
+    .container {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}

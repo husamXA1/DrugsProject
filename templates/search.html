@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="https://kit.fontawesome.com/3e07d4433e.js" crossorigin="anonymous"></script>
+    <title>Aafia Search</title>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <a href="/"><i class="fa-solid fa-house home-icon"></i></a>
+    <h1 class="main-title">Search</h1>
+    <div class="container search-form">
+        <form action="/search" method="GET">
+            <h2>Enter the name of the drug you want to search for</h2>
+            <input type="search" name="q" placeholder="Type here...">
+        </form>
+    </div>
+    <div class="container results">        
+        {% if results %}
+            <div class="drugs-grid">
+                {% for result in results %}
+                    <div class="drug-card">
+                        <h2>{{result[0]}}</h2>
+                        <div class="pharmacy-info">
+                            <div>
+                                <h3>Pharmacy Name</h3>
+                                <p>{{result[2]}}</p>
+                            </div>
+                            <span class="vertical-line"></span>
+                            <div>
+                                <h3>Pharmacy Address</h3>
+                                <p>{{result[3]}}</p>
+                            </div>
+                        </div>
+                        <form action="/drug" method="POST">
+                            <input type="hidden" name="pharmacy-id" value="{{result[4]}}">
+                            <input type="hidden" name="drug-id" value="{{result[1]}}">
+                            <input type="submit" value="see more">
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div>
+                <h2>No results found.</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
